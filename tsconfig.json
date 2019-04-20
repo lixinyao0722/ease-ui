@@ -19,6 +19,9 @@
     "paths": {
       "@/*": [
         "src/*"
+      ],
+      "@packages/*": [
+        "packages/*"
       ]
     },
     "lib": [
@@ -28,12 +31,18 @@
       "scripthost"
     ]
   },
+  "files": [
+    "types/vue.d.ts"
+  ],
   "include": [
     "src/**/*.ts",
     "src/**/*.tsx",
     "src/**/*.vue",
     "tests/**/*.ts",
-    "tests/**/*.tsx"
+    "tests/**/*.tsx",
+    "packages/**/*.ts",
+    "packages/**/*.tsx",
+    "packages/**/*.vue"
   ],
   "exclude": [
     "node_modules"

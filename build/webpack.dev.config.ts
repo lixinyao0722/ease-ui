@@ -9,7 +9,7 @@ console.log(resolve('src/index.js'));
 const config: Configuration = {
   mode: 'development',
   context: resolve('.'), // set the project root
-  entry: resolve('src/index.js'),
+  entry: resolve('src/index.ts'),
   output: {
     path: resolve('dist'),
     filename: 'app.js',
