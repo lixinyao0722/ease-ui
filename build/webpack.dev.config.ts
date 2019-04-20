@@ -1,10 +1,12 @@
-import * as webpack from 'webpack';
+import { Configuration } from 'webpack';
 import { resolve } from './util';
 import { cacheLoaderOptionsMap, tsLoaderOptions, urlLoaderOptions, vueLoaderOptions } from '../config';
 import { scssOneOfRules } from './styles';
 import { CacheKey } from '../config/constants/cache-loader';
 
-const config: webpack.Configuration = {
+console.log(resolve('src/index.js'));
+
+const config: Configuration = {
   mode: 'development',
   context: resolve('.'), // set the project root
   entry: resolve('src/index.js'),
@@ -31,7 +33,7 @@ const config: webpack.Configuration = {
       },
       {
         test: /\.(png|jpe?g|gif|webp)(\?.*)?$/,
-        use: 'url-loader',
+        loader: 'url-loader',
         options: urlLoaderOptions,
       },
       {
@@ -78,5 +80,7 @@ const config: webpack.Configuration = {
   devtool: '#@cheap-module-eval-source-map',
   plugins: [],
 };
+
+// console.log(JSON.stringify(config, null, 2));
 
 export default config;

@@ -9,7 +9,7 @@
   "main": "index.js",
   "scripts": {
     "start": "npm run dev",
-    "dev": "webpack --config build/webpack.dev.config.ts",
+    "dev": "cross-env TS_NODE_PROJECT=tsconfig-for-webpack-config.json webpack --config build/webpack.dev.config.ts",
     "test": ""
   },
   "repository": {
@@ -31,13 +31,19 @@
     "npm": ">=5.0.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.4.3",
     "@types/node": "^11.13.5",
     "@types/webpack": "^4.4.27",
+    "babel-loader": "^8.0.5",
+    "cache-loader": "^3.0.0",
+    "cross-env": "^5.2.0",
     "ts-loader": "^5.3.3",
     "ts-node": "^8.1.0",
+    "tsconfig-paths": "^3.8.0",
     "typescript": "^3.4.4",
     "url-loader": "^1.1.2",
     "vue-loader": "^15.7.0",
+    "vue-style-loader": "^4.1.2",
     "webpack": "^4.30.0",
     "webpack-cli": "^3.3.0",
     "webpack-merge": "^4.2.1"
