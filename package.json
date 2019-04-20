@@ -1,0 +1,43 @@
+{
+  "name": "ease-ui",
+  "version": "1.0.0",
+  "description": "web ui library based on vue",
+  "files": [
+    "src",
+    "dist"
+  ],
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run dev",
+    "dev": "webpack --config build/webpack.dev.config.ts",
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lixinyao0722/ease-ui.git"
+  },
+  "keywords": [
+    "ui lib",
+    "vue"
+  ],
+  "author": "xinyao.li",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/lixinyao0722/ease-ui/issues"
+  },
+  "homepage": "https://github.com/lixinyao0722/ease-ui#readme",
+  "engines": {
+    "node": ">=6.0.0",
+    "npm": ">=5.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^11.13.5",
+    "@types/webpack": "^4.4.27",
+    "ts-loader": "^5.3.3",
+    "ts-node": "^8.1.0",
+    "typescript": "^3.4.4",
+    "webpack": "^4.30.0",
+    "webpack-cli": "^3.3.0",
+    "webpack-merge": "^4.2.1"
+  }
+}
