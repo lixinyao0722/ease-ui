@@ -1,12 +1,16 @@
 import { Configuration, DefinePlugin, HotModuleReplacementPlugin } from 'webpack';
 import { resolve } from './util';
-import { cacheLoaderOptionsMap, tsLoaderOptions, urlLoaderOptions, vueLoaderOptions } from '../config';
+import {
+  htmlWebpackPluginOptions, definePluginOptions, cacheLoaderOptionsMap, tsLoaderOptions,
+  urlLoaderOptions, vueLoaderOptions,
+} from '../config';
 import { scssOneOfRules } from './styles';
 import { CacheKey } from '../config/constants/cache-loader';
 import { VueLoaderPlugin } from 'vue-loader/lib';
 import CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 import FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 import ProgressPlugin from 'progress-webpack-plugin';
+import HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const config: Configuration = {
   mode: 'development',
@@ -81,17 +85,13 @@ const config: Configuration = {
   },
   devtool: '#@cheap-module-eval-source-map',
   plugins: [
-    new VueLoaderPlugin(), // https://vue-loader.vuejs.org/zh/guide/#%E6%89%8B%E5%8A%A8%E8%AE%BE%E7%BD%AE
-    new DefinePlugin({
-      'process.env': {
-        NODE_ENV: JSON.stringify('development'),
-        BASE_URL: JSON.stringify('/'),
-      },
-    }),
+    new VueLoaderPlugin(),
+    new DefinePlugin(definePluginOptions),
     new CaseSensitivePathsPlugin(),
     new FriendlyErrorsPlugin(),
     new HotModuleReplacementPlugin(),
     new ProgressPlugin(),
+    new HtmlWebpackPlugin(htmlWebpackPluginOptions),
   ],
 };
 
