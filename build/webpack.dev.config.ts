@@ -1,10 +1,11 @@
-import { Configuration } from 'webpack';
+import { Configuration, DefinePlugin, HotModuleReplacementPlugin } from 'webpack';
 import { resolve } from './util';
 import { cacheLoaderOptionsMap, tsLoaderOptions, urlLoaderOptions, vueLoaderOptions } from '../config';
 import { scssOneOfRules } from './styles';
 import { CacheKey } from '../config/constants/cache-loader';
-
-console.log(resolve('src/index.js'));
+import { VueLoaderPlugin } from 'vue-loader/lib';
+import CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
+import FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
 
 const config: Configuration = {
   mode: 'development',
@@ -78,7 +79,18 @@ const config: Configuration = {
     },
   },
   devtool: '#@cheap-module-eval-source-map',
-  plugins: [],
+  plugins: [
+    new VueLoaderPlugin(), // https://vue-loader.vuejs.org/zh/guide/#%E6%89%8B%E5%8A%A8%E8%AE%BE%E7%BD%AE
+    new DefinePlugin({
+      'process.env': {
+        NODE_ENV: JSON.stringify('development'),
+        BASE_URL: JSON.stringify('/'),
+      },
+    }),
+    new CaseSensitivePathsPlugin(),
+    new FriendlyErrorsPlugin(),
+    new HotModuleReplacementPlugin(),
+  ],
 };
 
 // console.log(JSON.stringify(config, null, 2));

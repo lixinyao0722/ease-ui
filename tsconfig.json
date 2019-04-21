@@ -11,11 +11,6 @@
     "allowSyntheticDefaultImports": true,
     "sourceMap": true,
     "baseUrl": ".",
-    "types": [
-      "webpack-env",
-      "mocha",
-      "chai"
-    ],
     "paths": {
       "@/*": [
         "src/*"
@@ -31,10 +26,8 @@
       "scripthost"
     ]
   },
-  "files": [
-    "types/vue.d.ts"
-  ],
   "include": [
+    "types",
     "src/**/*.ts",
     "src/**/*.tsx",
     "src/**/*.vue",
