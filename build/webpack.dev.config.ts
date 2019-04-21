@@ -6,6 +6,7 @@ import { CacheKey } from '../config/constants/cache-loader';
 import { VueLoaderPlugin } from 'vue-loader/lib';
 import CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 import FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
+import ProgressPlugin from 'progress-webpack-plugin';
 
 const config: Configuration = {
   mode: 'development',
@@ -90,6 +91,7 @@ const config: Configuration = {
     new CaseSensitivePathsPlugin(),
     new FriendlyErrorsPlugin(),
     new HotModuleReplacementPlugin(),
+    new ProgressPlugin(),
   ],
 };
 

@@ -26,6 +26,9 @@
       "scripthost"
     ]
   },
+  "files": [
+    "types/progress-webpack-plugin.d.ts"
+  ],
   "include": [
     "types",
     "src/**/*.ts",
