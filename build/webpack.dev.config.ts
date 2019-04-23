@@ -9,7 +9,7 @@ import { CacheKey } from '../config/constants/cache-loader';
 import { VueLoaderPlugin } from 'vue-loader/lib';
 import CaseSensitivePathsPlugin = require('case-sensitive-paths-webpack-plugin');
 import FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin');
-import ProgressPlugin from 'progress-webpack-plugin';
+import ProgressPlugin = require('progress-webpack-plugin');
 import HtmlWebpackPlugin = require('html-webpack-plugin');
 
 const config: Configuration = {
